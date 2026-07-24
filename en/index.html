@@ -1,0 +1,609 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>GAINZ — Built to gain, not to cut. The app for hardgainers.</title>
+<meta name="description" content="GAINZ measures what you actually burn instead of guessing it: a weekly plan from 500+ meals, home training from 5 minutes, progress without guilt. For iPhone, no account.">
+<meta name="theme-color" content="#0b0e0c">
+<link rel="canonical" href="https://jkbennemann.github.io/gainz/en/">
+<link rel="alternate" hreflang="de" href="https://jkbennemann.github.io/gainz/">
+<link rel="alternate" hreflang="en" href="https://jkbennemann.github.io/gainz/en/">
+<link rel="alternate" hreflang="x-default" href="https://jkbennemann.github.io/gainz/">
+<link rel="icon" href="../assets/img/favicon-32.png" sizes="32x32">
+<link rel="apple-touch-icon" href="../assets/img/apple-touch-icon.png">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://jkbennemann.github.io/gainz/en/">
+<meta property="og:title" content="GAINZ — Built to gain, not to cut.">
+<meta property="og:description" content="The app for everyone who struggles to gain weight. A calibrated calorie target, a weekly plan, home training from 5 minutes.">
+<meta property="og:image" content="https://jkbennemann.github.io/gainz/assets/img/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="en_GB">
+<meta name="twitter:card" content="summary_large_image">
+<style>
+@font-face{font-family:'Space Grotesk';src:url('../assets/fonts/SpaceGrotesk-Bold.ttf') format('truetype');font-weight:700;font-style:normal;font-display:swap}
+@font-face{font-family:'Space Grotesk';src:url('../assets/fonts/SpaceGrotesk-SemiBold.ttf') format('truetype');font-weight:600;font-style:normal;font-display:swap}
+
+:root{
+  --volt:#c4f82a;
+  --bg:#ffffff; --bg2:#f7f9f6; --surface:#ffffff; --surface2:#f2f5f0;
+  --text:#111614; --text2:#4d5852; --text3:#79837c;
+  --border:#e3e8e3; --volt-ink:#4a7000; --on-volt:#141817;
+  --coral-ink:#b23c17; --shadow:0 10px 30px rgba(18,26,20,.08);
+  --maxw:1180px; --r:18px;
+}
+@media (prefers-color-scheme:dark){
+  :root{
+    --bg:#0b0e0c; --bg2:#0e1210; --surface:#141816; --surface2:#191e1b;
+    --text:#f4f7f4; --text2:#a7b0aa; --text3:#7a837c;
+    --border:#232a26; --volt-ink:#c4f82a; --coral-ink:#ff8f6b;
+    --shadow:0 14px 40px rgba(0,0,0,.5);
+  }
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--text);
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  font-size:17px;line-height:1.65;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img,video{max-width:100%;height:auto;display:block}
+a{color:var(--volt-ink)}
+h1,h2,h3,.dsp{font-family:'Space Grotesk',-apple-system,BlinkMacSystemFont,sans-serif;
+  font-weight:700;letter-spacing:-.02em;line-height:1.12;margin:0}
+h1{font-size:clamp(2.5rem,6.2vw,4.3rem)}
+h2{font-size:clamp(1.85rem,3.9vw,2.75rem)}
+h3{font-size:clamp(1.15rem,2vw,1.4rem);letter-spacing:-.01em}
+p{margin:0 0 1rem}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 22px}
+.eyebrow{font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:.78rem;
+  letter-spacing:.14em;text-transform:uppercase;color:var(--volt-ink);margin:0 0 14px}
+.eyebrow.warn{color:var(--coral-ink)}
+.lead{font-size:clamp(1.05rem,1.7vw,1.28rem);color:var(--text2);max-width:62ch}
+section{padding:clamp(60px,8vw,110px) 0;position:relative}
+.alt{background:var(--bg2);border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+
+header{position:sticky;top:0;z-index:50;backdrop-filter:saturate(180%) blur(14px);
+  -webkit-backdrop-filter:saturate(180%) blur(14px);
+  background:var(--bg);
+  background:color-mix(in srgb,var(--bg) 82%,transparent);
+  border-bottom:1px solid var(--border)}
+.nav{display:flex;align-items:center;gap:16px;height:64px}
+.brand{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:1.4rem;
+  letter-spacing:-.03em;text-decoration:none;color:var(--text)}
+.brand i{color:var(--volt-ink);font-style:normal}
+.nav nav{margin-left:auto;display:flex;gap:24px}
+.nav nav a{color:var(--text2);text-decoration:none;font-size:.95rem;font-weight:500}
+.nav nav a:hover{color:var(--text)}
+@media(max-width:900px){.nav nav{display:none}}
+.lang{display:flex;gap:2px;border:1px solid var(--border);border-radius:999px;padding:3px}
+.nav nav+.lang{margin-left:0}
+.nav .lang:first-of-type{margin-left:auto}
+.lang a{padding:4px 11px;border-radius:999px;font-size:.8rem;font-weight:700;
+  color:var(--text3);text-decoration:none;letter-spacing:.03em}
+.lang a[aria-current="true"]{background:var(--volt);color:#141817}
+
+.btn{display:inline-flex;align-items:center;gap:9px;padding:14px 24px;border-radius:999px;
+  font-weight:700;font-size:1rem;text-decoration:none;border:1px solid transparent;
+  cursor:pointer;transition:transform .15s ease,filter .15s ease}
+.btn:hover{transform:translateY(-1px)}
+.btn-primary{background:var(--volt);color:#141817}
+.btn-primary:hover{filter:brightness(1.06)}
+.btn-ghost{background:transparent;color:var(--text);border-color:var(--border)}
+.btn-ghost:hover{background:var(--surface2)}
+.btn-sm{padding:9px 17px;font-size:.9rem}
+.btns{display:flex;flex-wrap:wrap;gap:12px;margin-top:26px}
+.note{font-size:.86rem;color:var(--text3);margin-top:16px}
+
+.hero{padding-top:clamp(48px,7vw,86px);padding-bottom:0;overflow:hidden}
+.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(24px,4vw,60px);align-items:center}
+.hero-art{position:relative;justify-self:center}
+.hero-art::before{content:"";position:absolute;inset:-14% -18% 6% -18%;
+  background:radial-gradient(circle at 50% 40%,var(--volt),transparent 68%);
+  opacity:.17;filter:blur(46px);z-index:0}
+.hero-art img{position:relative;z-index:1;width:min(330px,74vw)}
+@media(max-width:860px){.hero-grid{grid-template-columns:1fr}.hero-art{margin-top:14px}}
+.strike{position:relative;display:inline-block;color:var(--text3)}
+.strike::after{content:"";position:absolute;left:-3%;right:-3%;top:52%;height:.11em;
+  background:var(--volt);border-radius:99px}
+
+.banner{background:var(--surface2);border:1px solid var(--border);border-radius:14px;
+  padding:14px 18px;margin:26px 0 0;font-size:.93rem;color:var(--text2)}
+.banner strong{color:var(--text)}
+
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;
+  margin:clamp(40px,6vw,72px) 0 0;padding:26px 0 0;border-top:1px solid var(--border)}
+.stats div{text-align:center}
+.stats b{display:block;font-family:'Space Grotesk',sans-serif;font-weight:700;
+  font-size:clamp(1.4rem,3vw,2rem);color:var(--text)}
+.stats span{font-size:.82rem;color:var(--text3)}
+@media(max-width:620px){.stats{grid-template-columns:repeat(2,1fr);gap:22px 14px}}
+
+.grid{display:grid;gap:16px}
+.g2{grid-template-columns:repeat(2,1fr)}
+.g3{grid-template-columns:repeat(3,1fr)}
+.g4{grid-template-columns:repeat(4,1fr)}
+@media(max-width:900px){.g3,.g4{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:620px){.g2,.g3,.g4{grid-template-columns:1fr}}
+.card{background:var(--surface);border:1px solid var(--border);border-radius:var(--r);
+  padding:24px;box-shadow:var(--shadow)}
+.card h3{margin-bottom:8px}
+.card p:last-child{margin-bottom:0}
+.card p{color:var(--text2);font-size:.97rem}
+.quote{font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:1.12rem;
+  line-height:1.4;color:var(--text);letter-spacing:-.01em}
+
+.compare{display:grid;grid-template-columns:1fr auto 1fr;gap:clamp(16px,4vw,48px);
+  align-items:center;margin:38px 0 30px;text-align:center}
+.compare .lbl{font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:.75rem;
+  letter-spacing:.13em;text-transform:uppercase;color:var(--text3);margin-bottom:6px}
+.compare .num{font-family:'Space Grotesk',sans-serif;font-weight:700;
+  font-size:clamp(2.6rem,8vw,5rem);line-height:1;letter-spacing:-.03em}
+.compare .vs{font-size:.8rem;color:var(--text3);letter-spacing:.1em;text-transform:uppercase}
+.compare .hit .num,.compare .hit .lbl{color:var(--volt-ink)}
+@media(max-width:620px){.compare{grid-template-columns:1fr;gap:18px}}
+
+.feat{display:grid;grid-template-columns:1fr 1fr;gap:clamp(28px,5vw,72px);
+  align-items:center;margin-bottom:clamp(56px,8vw,104px)}
+.feat:last-child{margin-bottom:0}
+.feat .art{justify-self:center;position:relative}
+.feat .art::before{content:"";position:absolute;inset:-8% -12% 4% -12%;
+  background:radial-gradient(circle at 50% 40%,var(--volt),transparent 70%);
+  opacity:.12;filter:blur(40px)}
+.feat .art img{position:relative;width:min(286px,68vw)}
+.feat.rev .txt{order:2}
+.feat ul{list-style:none;padding:0;margin:18px 0 0}
+.feat li{position:relative;padding-left:26px;margin-bottom:11px;color:var(--text2);font-size:1rem}
+.feat li::before{content:"";position:absolute;left:4px;top:.62em;width:9px;height:9px;
+  border-radius:99px;background:var(--volt)}
+.proof{margin-top:22px;border:1px solid var(--border);border-radius:14px;overflow:hidden;
+  box-shadow:var(--shadow)}
+.proof img{width:100%}
+.proof figcaption{font-size:.8rem;color:var(--text3);padding:10px 14px;
+  background:var(--surface2);border-top:1px solid var(--border)}
+@media(max-width:860px){.feat{grid-template-columns:1fr}.feat.rev .txt{order:0}}
+
+.player{border-radius:var(--r);overflow:hidden;border:1px solid var(--border);
+  box-shadow:var(--shadow);background:#000;margin-top:30px}
+.player video{width:100%;display:block}
+
+details{border:1px solid var(--border);border-radius:14px;background:var(--surface);
+  padding:0 20px;margin-bottom:10px}
+details summary{cursor:pointer;list-style:none;padding:17px 0;font-weight:650;
+  display:flex;align-items:center;gap:12px;font-size:1.02rem}
+details summary::-webkit-details-marker{display:none}
+details summary::after{content:"+";margin-left:auto;color:var(--volt-ink);
+  font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:1.3rem;line-height:1}
+details[open] summary::after{content:"–"}
+details .ans{padding:0 0 18px;color:var(--text2);font-size:.98rem}
+details .ans p:last-child{margin-bottom:0}
+
+.final{text-align:center}
+.final img.ic{width:88px;border-radius:20px;margin:0 auto 24px;box-shadow:var(--shadow)}
+.final .btns{justify-content:center}
+
+footer{border-top:1px solid var(--border);padding:44px 0 60px;background:var(--bg2)}
+.fgrid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:30px}
+@media(max-width:760px){.fgrid{grid-template-columns:1fr;gap:24px}}
+footer h4{font-family:'Space Grotesk',sans-serif;font-size:.78rem;letter-spacing:.12em;
+  text-transform:uppercase;color:var(--text3);margin:0 0 12px;font-weight:600}
+footer a{color:var(--text2);text-decoration:none;display:block;margin-bottom:8px;font-size:.94rem}
+footer a:hover{color:var(--text)}
+.fine{margin-top:34px;padding-top:22px;border-top:1px solid var(--border);
+  font-size:.82rem;color:var(--text3)}
+.fine p{margin:0 0 8px}
+
+.rv{opacity:0;transform:translateY(18px);transition:opacity .6s ease,transform .6s ease}
+.rv.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .rv{opacity:1;transform:none;transition:none}
+  .btn:hover{transform:none}
+}
+:focus-visible{outline:3px solid var(--volt);outline-offset:3px;border-radius:6px}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="#top">GAIN<i>Z</i></a>
+    <nav aria-label="Sections">
+      <a href="#problem">Problem</a>
+      <a href="#why">Why GAINZ</a>
+      <a href="#features">Features</a>
+      <a href="#video">Video</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+    <div class="lang" role="group" aria-label="Language">
+      <a href="../index.html" hreflang="de">DE</a>
+      <a href="index.html" hreflang="en" aria-current="true">EN</a>
+    </div>
+    <a class="btn btn-primary btn-sm" href="mailto:gainz@jakob-bennemann.de?subject=GAINZ%20—%20Notify%20me&body=Hi%2C%20please%20let%20me%20know%20when%20GAINZ%20is%20on%20the%20App%20Store.">Notify me</a>
+  </div>
+</header>
+
+<main id="top">
+
+<!-- HERO -->
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <p class="eyebrow">For iPhone · No account · No tracking</p>
+      <h1>Built to gain.<br>Not to cut.</h1>
+      <p class="lead" style="margin-top:20px">
+        The app for everyone who struggles to <strong>put on weight</strong>. GAINZ measures
+        what you actually burn, makes the calories manageable — and gets you training,
+        even without a gym.
+      </p>
+      <div class="btns">
+        <a class="btn btn-primary" href="mailto:gainz@jakob-bennemann.de?subject=GAINZ%20—%20Notify%20me&body=Hi%2C%20please%20let%20me%20know%20when%20GAINZ%20is%20on%20the%20App%20Store.">Notify me</a>
+        <a class="btn btn-ghost" href="#video">Watch the 60-second video</a>
+      </div>
+      <p class="note">Coming soon to the App Store · iPhone, iOS 17 or later</p>
+      <p class="banner">
+        <strong>Heads-up:</strong> the app interface is currently <strong>German only</strong>.
+        An English version is in preparation — leave your address above and we will tell you
+        when it ships.
+      </p>
+    </div>
+    <div class="hero-art">
+      <img src="../assets/img/phone-heute.webp" width="634" height="1245"
+           alt="GAINZ today view: calorie ring showing 1,170 kilocalories remaining, with protein, carbohydrate and fat bars below." fetchpriority="high">
+    </div>
+  </div>
+  <div class="wrap">
+    <div class="stats">
+      <div><b>500+</b><span>meals in the catalogue</span></div>
+      <div><b>~800</b><span>exercises, offline</span></div>
+      <div><b>from 5 min</b><span>training that counts</span></div>
+      <div><b>0</b><span>trackers, 0 accounts</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- PROBLEM -->
+<section id="problem" class="alt">
+  <div class="wrap">
+    <p class="eyebrow warn rv">Sound familiar?</p>
+    <h2 class="rv">Gaining weight isn't<br>dieting in reverse.</h2>
+    <p class="lead rv" style="margin-top:18px">
+      Almost every nutrition app is built to make you eat less. If you need the opposite,
+      you end up fighting the tool.
+    </p>
+    <div class="grid g4" style="margin-top:38px">
+      <div class="card rv"><p class="quote">“I already eat so much — and still don't gain a kilo.”</p></div>
+      <div class="card rv"><p class="quote">“Every app wants me to lose weight. I want the opposite.”</p></div>
+      <div class="card rv"><p class="quote">“No gym nearby. And no energy left by the evening.”</p></div>
+      <div class="card rv"><p class="quote">“The scale hasn't moved in weeks. Why keep going?”</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- THE TWIST -->
+<section id="why">
+  <div class="wrap" style="max-width:900px">
+    <p class="eyebrow rv">Why calorie calculators fail</p>
+    <h2 class="rv">Formulas estimate.<br>Your body does its own maths.</h2>
+
+    <div class="compare rv">
+      <div>
+        <p class="lbl">Formula said</p>
+        <p class="num strike">1,648</p>
+      </div>
+      <div class="vs">versus</div>
+      <div class="hit">
+        <p class="lbl">Actually measured</p>
+        <p class="num">816</p>
+      </div>
+    </div>
+
+    <p class="lead rv">
+      A professional sports assessment measured a
+      <strong>basal metabolic rate of roughly 816&nbsp;kcal</strong> at 63&nbsp;kg body
+      weight — more than 800&nbsp;kcal below what standard formulas predict. Base your
+      target on a number like that and you never actually eat in a surplus, then wonder
+      why nothing happens.
+    </p>
+    <p class="note rv">
+      That is one real measurement, not an average — but precisely why GAINZ does
+      <em>not</em> derive your target from a formula. It calculates it from your own data
+      and raises it in small steps.
+    </p>
+  </div>
+</section>
+
+<!-- FEATURES -->
+<section id="features" class="alt">
+  <div class="wrap">
+    <p class="eyebrow rv">How it works</p>
+    <h2 class="rv" style="margin-bottom:clamp(44px,6vw,80px)">Four problems. Four answers.</h2>
+
+    <div class="feat">
+      <div class="txt rv">
+        <h3>Your target is measured, not guessed</h3>
+        <p style="color:var(--text2);margin-top:10px">
+          GAINZ works out your real maintenance intake from what you log and your smoothed
+          weight trend — then nudges the target upward instead of overwhelming you with a
+          wishful number.
+        </p>
+        <ul>
+          <li>Maintenance = average intake minus your weight trend</li>
+          <li>+100–150&nbsp;kcal every 1–2 weeks, as long as the trend holds</li>
+          <li>Target rate 0.25–0.5&nbsp;% of body weight per week</li>
+          <li>Protein 1.6–2.2&nbsp;g/kg — stays constant even when calories are low</li>
+        </ul>
+      </div>
+      <div class="art rv">
+        <img src="../assets/img/phone-fortschritt.webp" width="574" height="1114" loading="lazy"
+             alt="Progress view with a weekly review score of 77 out of 100 and a smoothed weight chart.">
+      </div>
+    </div>
+
+    <div class="feat rev">
+      <div class="txt rv">
+        <h3>The plan makes the volume doable</h3>
+        <p style="color:var(--text2);margin-top:10px">
+          The blocker is rarely willpower — it's volume. You're full long before the target
+          is met. GAINZ spreads the calories across six slots: proper meals <em>and</em>
+          deliberately calorie-dense snacks.
+        </p>
+        <ul>
+          <li>Weekly plan from 500+ meals, respecting your blocklist and gluten-free setting</li>
+          <li>Cooking mode: quick&nbsp;≤&nbsp;15&nbsp;min, meal prep, or mixed</li>
+          <li>Shopping list in real pack sizes — with leftovers accounted for</li>
+          <li>Log by search, barcode scan or a one-tap snack</li>
+        </ul>
+        <figure class="proof">
+          <img src="../assets/img/detail-packs.webp" width="720" height="177" loading="lazy"
+               alt="Shopping list showing spinach 230 g from a 450 g bag with 225 g left over, and broccoli 450 g from two 400 g bags with 350 g left over.">
+          <figcaption>Real packs instead of awkward gram figures — leftovers included.</figcaption>
+        </figure>
+      </div>
+      <div class="art rv">
+        <img src="../assets/img/phone-plan.webp" width="574" height="1114" loading="lazy"
+             alt="Weekly plan showing six meals for the day, 2,025 kilocalories and 114 grams of protein.">
+      </div>
+    </div>
+
+    <div class="feat">
+      <div class="txt rv">
+        <h3>Train wherever you happen to be</h3>
+        <p style="color:var(--text2);margin-top:10px">
+          No gym, no time, no energy — the three most common reasons people stop. So GAINZ
+          only asks: <em>where are you, how long have you got, how strong do you feel?</em>
+          — and hands you a finished workout.
+        </p>
+        <ul>
+          <li>Living room, balcony, on the road, or a gym</li>
+          <li>5, 10, 20 or 40 minutes — “tired” is a valid answer too</li>
+          <li>Automatic progression: more reps, harder variants, planned deload</li>
+          <li>Strength and cardio steered separately, with recovery protected</li>
+        </ul>
+        <figure class="proof">
+          <img src="../assets/img/detail-places.webp" width="720" height="472" loading="lazy"
+               alt="Workout generator options: strength or cardio, living room, balcony, on the road, gym, 5 to 40 minutes, tired to strong.">
+          <figcaption>Place × time × energy — never a blank page.</figcaption>
+        </figure>
+      </div>
+      <div class="art rv">
+        <img src="../assets/img/phone-training.webp" width="574" height="1114" loading="lazy"
+             alt="Training view with the context generator and a ready-made 20-minute full-body workout.">
+      </div>
+    </div>
+
+    <div class="feat rev">
+      <div class="txt rv">
+        <h3>Stick with it, without the guilt</h3>
+        <p style="color:var(--text2);margin-top:10px">
+          At 0.25&nbsp;% gain per week the scale stays quiet for weeks. Watch only the scale
+          and you quit. So GAINZ rewards what you can actually control.
+        </p>
+        <ul>
+          <li>Weekly review with a process score instead of daily noise</li>
+          <li>Forgiving streak with a joker week — one missed day doesn't count</li>
+          <li>If-then plans that remind you in your own words</li>
+          <li>Widget with a one-tap snack, and at most one reminder a day</li>
+          <li>500+ meals plus optional AI recipes to fight boredom</li>
+        </ul>
+      </div>
+      <div class="art rv">
+        <img src="../assets/img/phone-rezepte.webp" width="574" height="1114" loading="lazy"
+             alt="Recipe library with suggestions from more than 500 meals and optional AI generation.">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- VIDEO -->
+<section id="video">
+  <div class="wrap" style="max-width:960px">
+    <p class="eyebrow rv">In 60 seconds</p>
+    <h2 class="rv">The problem, the twist, the solution.</h2>
+    <div class="player rv">
+      <video controls playsinline preload="none" poster="../assets/video/promo-poster.jpg"
+             width="1920" height="1080">
+        <source src="../assets/video/promo-720p.mp4" type="video/mp4">
+        Your browser cannot play this video —
+        <a href="../assets/video/promo-720p.mp4">download it instead</a>.
+      </video>
+    </div>
+    <p class="note rv">
+      Built without sound, so every claim is on screen. The on-screen text is German.
+      <a href="../assets/video/promo-1080p.mp4">Watch in 1080p</a>
+    </p>
+  </div>
+</section>
+
+<!-- TRUST -->
+<section class="alt">
+  <div class="wrap">
+    <p class="eyebrow rv">Your data</p>
+    <h2 class="rv">Stays where it belongs.</h2>
+    <div class="grid g3" style="margin-top:38px">
+      <div class="card rv">
+        <h3>Everything on your device</h3>
+        <p>Meals, weight and workouts live locally on your iPhone. A backup to your
+        <em>private</em> iCloud is optional — we never get to see any of it.</p>
+      </div>
+      <div class="card rv">
+        <h3>No account, no tracking</h3>
+        <p>No sign-up, no analytics trackers, no ads, nothing sold to data brokers.
+        And a button that really does delete everything.</p>
+      </div>
+      <div class="card rv">
+        <h3>AI only if you want it</h3>
+        <p>The AI coach is off by default and runs on your own key (Mistral, EU). You are
+        asked explicitly before the first transfer — weight and health values never
+        leave the device.</p>
+      </div>
+    </div>
+    <p class="note rv" style="margin-top:24px">
+      Full details in the <a href="privacy.html">privacy policy</a>.
+    </p>
+  </div>
+</section>
+
+<!-- EVIDENCE -->
+<section>
+  <div class="wrap" style="max-width:900px">
+    <p class="eyebrow rv">Built on evidence</p>
+    <h2 class="rv">No bro science.</h2>
+    <p class="lead rv" style="margin-top:16px">
+      The rules behind the plan and the training come from sports science and behavioural
+      research — not from gut feeling.
+    </p>
+    <div class="grid g2 rv" style="margin-top:32px">
+      <div class="card">
+        <h3>Building muscle</h3>
+        <p>Low loads taken close to failure drive hypertrophy about as well as heavy loads
+        (Schoenfeld) — which is why home training works. Target volume is 10–20 hard sets
+        per muscle per week, with protein at 1.6–2.2&nbsp;g/kg.</p>
+      </div>
+      <div class="card">
+        <h3>Sticking with it</h3>
+        <p>If-then plans are the strongest known adherence lever. Habits take around
+        66&nbsp;days on average (Lally) — which is why the streak forgives a slip instead
+        of punishing it.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq" class="alt">
+  <div class="wrap" style="max-width:860px">
+    <p class="eyebrow rv">Questions</p>
+    <h2 class="rv" style="margin-bottom:30px">Briefly answered.</h2>
+
+    <details class="rv"><summary>Is the app available in English?</summary>
+      <div class="ans"><p>Not yet. Version 1.0 ships in German; the app is already built for
+      localisation, so English is the next step rather than a rewrite. Drop us a line and
+      we'll tell you when it lands.</p></div></details>
+
+    <details class="rv"><summary>Is GAINZ just another calorie counter?</summary>
+      <div class="ans"><p>No — it runs the other way round. GAINZ is built to hit an
+      achievable surplus rather than police a deficit. Your calorie target is calibrated
+      from your own data and raised step by step, and it comes with training planning and
+      a behaviour engine aimed at excuses.</p></div></details>
+
+    <details class="rv"><summary>Do I need a gym?</summary>
+      <div class="ans"><p>No. GAINZ is designed for home training: body weight, resistance
+      bands, a pull-up bar, adjustable dumbbells, or simply a chair and a wall. If you do
+      have gym access, the “gym” location unlocks heavy compound lifts as well.</p></div></details>
+
+    <details class="rv"><summary>What if I don't know my basal metabolic rate?</summary>
+      <div class="ans"><p>That's fine — the measured value is optional and only ever used as
+      a starting estimate. GAINZ deliberately starts low and works out your real
+      requirement over the first 10–14 days from your logging and weight trend.</p></div></details>
+
+    <details class="rv"><summary>Do I need an AI key?</summary>
+      <div class="ans"><p>No. The weekly plan, training, coach guidance and progress all work
+      without AI. If you want, you can add your own API key so text reads more naturally and
+      extra recipes can be generated. Every assessment and calculation still happens in the
+      app itself.</p></div></details>
+
+    <details class="rv"><summary>Does it work offline?</summary>
+      <div class="ans"><p>Yes. The meal catalogue, exercise library and all calculations live
+      on the device. Only the food search (Open Food Facts) and the optional AI features need
+      a connection — lose it, and local search takes over.</p></div></details>
+
+    <details class="rv"><summary>Is this medical advice?</summary>
+      <div class="ans"><p>No. GAINZ is a wellness app and is no substitute for medical advice,
+      diagnosis or treatment. If you are underweight, or before changing your diet, please
+      consult a doctor.</p></div></details>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="final">
+  <div class="wrap" style="max-width:720px">
+    <img class="ic rv" src="../assets/img/icon-512.png" width="88" height="88" loading="lazy" alt="GAINZ app icon">
+    <h2 class="rv">Stop guessing.<br>Start measuring.</h2>
+    <p class="lead rv" style="margin:18px auto 0;text-align:left">
+      GAINZ is coming to the App Store. Leave us a line and you'll get exactly one email —
+      when it goes live.
+    </p>
+    <div class="btns rv">
+      <a class="btn btn-primary" href="mailto:gainz@jakob-bennemann.de?subject=GAINZ%20—%20Notify%20me&body=Hi%2C%20please%20let%20me%20know%20when%20GAINZ%20is%20on%20the%20App%20Store.">Notify me</a>
+      <a class="btn btn-ghost" href="#features">See the features</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="fgrid">
+      <div>
+        <a class="brand" href="#top" style="display:inline-block;margin-bottom:10px">GAIN<i>Z</i></a>
+        <p style="color:var(--text2);font-size:.94rem;max-width:34ch;margin:0">
+          Nutrition and training for deliberate muscle and strength gain. For iPhone,
+          no account required.
+        </p>
+      </div>
+      <div>
+        <h4>Legal</h4>
+        <a href="imprint.html">Imprint</a>
+        <a href="privacy.html">Privacy policy</a>
+        <a href="support.html">Support &amp; contact</a>
+        <a href="mailto:gainz@jakob-bennemann.de">gainz@jakob-bennemann.de</a>
+      </div>
+      <div>
+        <h4>Sources &amp; licences</h4>
+        <a href="https://openfoodfacts.org" rel="noopener">Open Food Facts (ODbL)</a>
+        <a href="https://wger.de" rel="noopener">wger exercises (CC-BY-SA 4.0)</a>
+        <a href="https://openfontlicense.org" rel="noopener">Space Grotesk (SIL OFL 1.1)</a>
+      </div>
+    </div>
+    <div class="fine">
+      <p><strong>GAINZ is a wellness app</strong> and is no substitute for medical advice,
+      diagnosis or treatment. If you are underweight, or before changing your diet, please
+      seek medical advice.</p>
+      <p>Provider under § 5 DDG: Jakob Bennemann, Neubrückenstraße 73, 48143 Münster, Germany ·
+      <a href="imprint.html">Imprint</a> ·
+      © <span id="y"></span> GAINZ. Apple, iPhone, App Store and Apple Health are trademarks
+      of Apple Inc.</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+document.getElementById('y').textContent = new Date().getFullYear();
+(function(){
+  var els = document.querySelectorAll('.rv');
+  if (!('IntersectionObserver' in window) ||
+      window.matchMedia('(prefers-reduced-motion: reduce)').matches){
+    els.forEach(function(e){ e.classList.add('in'); });
+    return;
+  }
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(en){
+      if (en.isIntersecting){ en.target.classList.add('in'); io.unobserve(en.target); }
+    });
+  }, {rootMargin:'0px 0px -8% 0px', threshold:0.06});
+  els.forEach(function(e){ io.observe(e); });
+})();
+</script>
+</body>
+</html>

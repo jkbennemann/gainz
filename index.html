@@ -7,6 +7,9 @@
 <meta name="description" content="GAINZ misst deinen echten Kalorienbedarf statt ihn zu schätzen: Wochenplan mit über 500 Gerichten, Heimtraining ab 5 Minuten, Fortschritt ohne Schuldgefühle. Für iPhone, deutschsprachig, ohne Konto.">
 <meta name="theme-color" content="#0b0e0c">
 <link rel="canonical" href="https://jkbennemann.github.io/gainz/">
+<link rel="alternate" hreflang="de" href="https://jkbennemann.github.io/gainz/">
+<link rel="alternate" hreflang="en" href="https://jkbennemann.github.io/gainz/en/">
+<link rel="alternate" hreflang="x-default" href="https://jkbennemann.github.io/gainz/">
 <link rel="icon" href="assets/img/favicon-32.png" sizes="32x32">
 <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
 <meta property="og:type" content="website">
@@ -73,7 +76,13 @@ header{position:sticky;top:0;z-index:50;backdrop-filter:saturate(180%) blur(14px
 .nav nav{margin-left:auto;display:flex;gap:24px}
 .nav nav a{color:var(--text2);text-decoration:none;font-size:.95rem;font-weight:500}
 .nav nav a:hover{color:var(--text)}
-@media(max-width:820px){.nav nav{display:none}}
+@media(max-width:900px){.nav nav{display:none}}
+.lang{display:flex;gap:2px;border:1px solid var(--border);border-radius:999px;padding:3px}
+.nav .lang:first-of-type{margin-left:auto}
+.nav nav+.lang{margin-left:0}
+.lang a{padding:4px 11px;border-radius:999px;font-size:.8rem;font-weight:700;
+  color:var(--text3);text-decoration:none;letter-spacing:.03em}
+.lang a[aria-current="true"]{background:var(--volt);color:#141817}
 
 /* ── buttons */
 .btn{display:inline-flex;align-items:center;gap:9px;padding:14px 24px;border-radius:999px;
@@ -225,6 +234,10 @@ footer a:hover{color:var(--text)}
       <a href="#video">Video</a>
       <a href="#faq">FAQ</a>
     </nav>
+    <div class="lang" role="group" aria-label="Sprache">
+      <a href="index.html" hreflang="de" aria-current="true">DE</a>
+      <a href="en/index.html" hreflang="en">EN</a>
+    </div>
     <a class="btn btn-primary btn-sm" href="mailto:gainz@jakob-bennemann.de?subject=GAINZ%20—%20Bitte%20benachrichtigen&body=Hi%2C%20bitte%20sag%20mir%20Bescheid%2C%20wenn%20GAINZ%20im%20App%20Store%20ist.">Benachrichtige mich</a>
   </div>
 </header>
