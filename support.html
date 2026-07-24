@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Support — GAINZ</title>
+<style>
+  :root{
+    --bg:#ffffff; --surface:#f5f7f4; --text:#141817; --text2:#55605a;
+    --text3:#7c857f; --border:#e4e8e5; --volt:#c4f82a; --volt-ink:#4c7300;
+    --radius:16px; --maxw:760px;
+  }
+  @media (prefers-color-scheme: dark){
+    :root{
+      --bg:#0e1110; --surface:#171a19; --text:#f5f7f5; --text2:#a5ada8;
+      --text3:#79817b; --border:#262b29; --volt:#c4f82a; --volt-ink:#c4f82a;
+    }
+  }
+  *{box-sizing:border-box}
+  html{-webkit-text-size-adjust:100%}
+  body{margin:0; background:var(--bg); color:var(--text);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    line-height:1.6; font-size:17px; -webkit-font-smoothing:antialiased;}
+  .wrap{max-width:var(--maxw); margin:0 auto; padding:32px 20px 80px}
+  header.masthead{display:flex; align-items:center; gap:12px; margin:8px 0 28px}
+  .logo{font-weight:800; font-size:26px; letter-spacing:-0.02em}
+  .logo .z{color:var(--volt-ink)}
+  .badge{font-size:12px; font-weight:700; text-transform:uppercase; letter-spacing:.08em;
+    color:var(--volt-ink); background:color-mix(in srgb, var(--volt) 18%, transparent);
+    padding:4px 10px; border-radius:999px;}
+  h1{font-size:30px; letter-spacing:-0.02em; margin:0 0 6px; line-height:1.2}
+  .sub{color:var(--text3); font-size:15px; margin:0 0 28px}
+  h2{font-size:20px; margin:36px 0 12px}
+  p,li{color:var(--text2)} p{margin:0 0 14px}
+  strong{color:var(--text); font-weight:650}
+  a{color:var(--volt-ink); text-decoration:none; font-weight:600}
+  a:hover{text-decoration:underline}
+  .contact{
+    background:var(--surface); border:1px solid var(--border); border-radius:var(--radius);
+    padding:22px; margin:8px 0 8px; text-align:center;
+  }
+  .contact .mail{font-size:20px; margin:8px 0 0}
+  .faq{background:var(--surface); border:1px solid var(--border); border-radius:var(--radius);
+    padding:6px 20px; margin:8px 0}
+  details{border-bottom:1px solid var(--border); padding:14px 0}
+  details:last-child{border-bottom:none}
+  summary{cursor:pointer; font-weight:650; color:var(--text); list-style:none}
+  summary::-webkit-details-marker{display:none}
+  summary::after{content:"+"; float:right; color:var(--volt-ink); font-weight:800}
+  details[open] summary::after{content:"–"}
+  details p{margin:12px 0 2px}
+  footer{margin-top:48px; padding-top:20px; border-top:1px solid var(--border);
+    font-size:14px; color:var(--text3); display:flex; gap:18px; flex-wrap:wrap}
+  footer a{color:var(--text2)}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="masthead">
+    <span class="logo">GAIN<span class="z">Z</span></span>
+    <span class="badge">Support</span>
+  </header>
+
+  <h1>Support &amp; Kontakt</h1>
+  <p class="sub">Fragen, Feedback oder ein Problem? Wir helfen gern weiter.</p>
+
+  <div class="contact">
+    <div>Schreib uns:</div>
+    <div class="mail"><a href="mailto:gainz@jakob-bennemann.de">gainz@jakob-bennemann.de</a></div>
+  </div>
+
+  <h2>Häufige Fragen</h2>
+  <div class="faq">
+    <details>
+      <summary>Wie wird mein Kalorienziel berechnet?</summary>
+      <p>GAINZ rät nicht, sondern kalibriert: Aus deiner protokollierten Zufuhr und dem
+      geglätteten Gewichtstrend berechnet die App deinen realen Erhaltungsbedarf und steigert
+      das Ziel behutsam. Ein gemessener Grundumsatz dient nur als Startschätzung. GAINZ ist
+      eine Wellness-App und ersetzt keine ärztliche Beratung.</p>
+    </details>
+    <details>
+      <summary>Wie aktiviere oder deaktiviere ich Apple Health?</summary>
+      <p>Unter <strong>Profil&nbsp;→&nbsp;Apple&nbsp;Health</strong>. Der Zugriff ist optional
+      und lässt sich jederzeit dort oder in den iOS-Einstellungen widerrufen.</p>
+    </details>
+    <details>
+      <summary>Was macht der KI-Coach mit meinen Daten?</summary>
+      <p>Die KI-Funktionen sind optional und standardmäßig aus. Sie nutzen deinen eigenen
+      API-Schlüssel (nur im Geräte-Schlüsselbund gespeichert). Vor der ersten Übertragung
+      fragt die App ausdrücklich um Zustimmung; gesendet werden nur zusammengefasste
+      Trainings- und Rezeptdaten, keine Gewichts- oder Gesundheitswerte. Details in der
+      <a href="./datenschutz.html">Datenschutzerklärung</a>.</p>
+    </details>
+    <details>
+      <summary>Wie lösche ich alle meine Daten?</summary>
+      <p><strong>Profil&nbsp;→&nbsp;Rechtliches&nbsp;&amp;&nbsp;Daten&nbsp;→&nbsp;„Alle Daten
+      löschen“.</strong> Das entfernt alle lokalen Daten, das iCloud-Backup und den
+      gespeicherten KI-Schlüssel unwiderruflich. Die App startet danach wie beim ersten Mal.</p>
+    </details>
+    <details>
+      <summary>Funktioniert GAINZ ohne iCloud oder ohne Internet?</summary>
+      <p>Ja. Die App funktioniert vollständig lokal. iCloud-Backup ist optional; die
+      Online-Lebensmittelsuche fällt bei fehlender Verbindung auf lokale Treffer zurück.</p>
+    </details>
+  </div>
+
+  <footer>
+    <span>© <span id="y"></span> GAINZ</span>
+    <a href="./datenschutz.html">Datenschutz</a>
+    <a href="./index.html">Start</a>
+  </footer>
+</div>
+<script>document.getElementById('y').textContent=new Date().getFullYear();</script>
+</body>
+</html>
