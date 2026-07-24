@@ -3,182 +3,473 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="robots" content="index, follow">
 <title>Datenschutzerklärung — GAINZ</title>
+<meta name="description" content="Datenschutzerklärung nach Art. 13 DSGVO für die Website und die iOS-App GAINZ: Rechtsgrundlagen, Empfänger, Drittlandübermittlung, Speicherdauer und Betroffenenrechte.">
+<meta name="robots" content="index, follow">
+<link rel="icon" href="assets/img/favicon-32.png" sizes="32x32">
+<link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
 <style>
-  :root{
-    --bg:#ffffff; --surface:#f5f7f4; --text:#141817; --text2:#55605a;
-    --text3:#7c857f; --border:#e4e8e5; --volt:#c4f82a; --volt-ink:#4c7300;
-    --radius:16px; --maxw:760px;
-  }
-  @media (prefers-color-scheme: dark){
-    :root{
-      --bg:#0e1110; --surface:#171a19; --text:#f5f7f5; --text2:#a5ada8;
-      --text3:#79817b; --border:#262b29; --volt:#c4f82a; --volt-ink:#c4f82a;
-    }
-  }
-  *{box-sizing:border-box}
-  html{-webkit-text-size-adjust:100%}
-  body{
-    margin:0; background:var(--bg); color:var(--text);
-    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
-    line-height:1.6; font-size:17px;
-    -webkit-font-smoothing:antialiased;
-  }
-  .wrap{max-width:var(--maxw); margin:0 auto; padding:32px 20px 80px}
-  header.masthead{display:flex; align-items:center; gap:12px; margin:8px 0 28px}
-  .logo{
-    font-weight:800; font-size:26px; letter-spacing:-0.02em;
-  }
-  .logo .z{color:var(--volt-ink)}
-  .badge{
-    font-size:12px; font-weight:700; text-transform:uppercase; letter-spacing:.08em;
-    color:var(--volt-ink); background:color-mix(in srgb, var(--volt) 18%, transparent);
-    padding:4px 10px; border-radius:999px;
-  }
-  h1{font-size:30px; letter-spacing:-0.02em; margin:0 0 6px; line-height:1.2}
-  .stand{color:var(--text3); font-size:14px; margin:0 0 28px}
-  h2{font-size:20px; letter-spacing:-0.01em; margin:38px 0 10px}
-  h3{font-size:16px; margin:24px 0 6px; color:var(--text)}
-  p,li{color:var(--text2)}
-  p{margin:0 0 14px}
-  strong{color:var(--text); font-weight:650}
-  a{color:var(--volt-ink); text-decoration:none; font-weight:600}
-  a:hover{text-decoration:underline}
-  ul{margin:0 0 14px; padding-left:22px}
-  li{margin:0 0 8px}
-  .card{
-    background:var(--surface); border:1px solid var(--border);
-    border-radius:var(--radius); padding:18px 20px; margin:18px 0;
-  }
-  .card.lead p{color:var(--text); margin:0}
-  .note{font-size:14px; color:var(--text3)}
-  hr{border:none; border-top:1px solid var(--border); margin:36px 0}
-  footer{margin-top:48px; padding-top:20px; border-top:1px solid var(--border);
-    font-size:14px; color:var(--text3); display:flex; gap:18px; flex-wrap:wrap}
-  footer a{color:var(--text2)}
+@font-face{font-family:'Space Grotesk';src:url('assets/fonts/SpaceGrotesk-Bold.ttf') format('truetype');font-weight:700;font-display:swap}
+@font-face{font-family:'Space Grotesk';src:url('assets/fonts/SpaceGrotesk-SemiBold.ttf') format('truetype');font-weight:600;font-display:swap}
+:root{
+  --volt:#c4f82a;--bg:#ffffff;--bg2:#f7f9f6;--surface:#ffffff;--surface2:#f2f5f0;
+  --text:#111614;--text2:#4d5852;--text3:#79837c;--border:#e3e8e3;--volt-ink:#4a7000;
+  --shadow:0 10px 30px rgba(18,26,20,.07);--r:16px;
+}
+@media (prefers-color-scheme:dark){
+  :root{--bg:#0b0e0c;--bg2:#0e1210;--surface:#141816;--surface2:#191e1b;
+    --text:#f4f7f4;--text2:#a7b0aa;--text3:#7a837c;--border:#232a26;--volt-ink:#c4f82a;
+    --shadow:0 14px 40px rgba(0,0,0,.5);}
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--text);font-size:17px;line-height:1.7;
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  -webkit-font-smoothing:antialiased}
+.wrap{max-width:820px;margin:0 auto;padding:0 22px}
+header{position:sticky;top:0;z-index:20;border-bottom:1px solid var(--border);
+  background:var(--bg);background:color-mix(in srgb,var(--bg) 85%,transparent);
+  backdrop-filter:saturate(180%) blur(14px);-webkit-backdrop-filter:saturate(180%) blur(14px)}
+.nav{display:flex;align-items:center;gap:16px;height:60px;max-width:820px;margin:0 auto;padding:0 22px}
+.brand{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:1.3rem;
+  letter-spacing:-.03em;text-decoration:none;color:var(--text)}
+.brand i{color:var(--volt-ink);font-style:normal}
+.nav a.back{margin-left:auto;font-size:.93rem;color:var(--text2);text-decoration:none;font-weight:500}
+.nav a.back:hover{color:var(--text)}
+h1,h2,h3{font-family:'Space Grotesk',sans-serif;font-weight:700;letter-spacing:-.02em;
+  line-height:1.15;margin:0}
+h1{font-size:clamp(2rem,5vw,2.9rem);margin-bottom:6px}
+h2{font-size:clamp(1.2rem,2.6vw,1.5rem);margin:46px 0 12px}
+h3{font-size:1.05rem;margin:26px 0 8px;letter-spacing:-.01em}
+.stand{color:var(--text3);font-size:.9rem;margin:0 0 30px}
+p{margin:0 0 14px;color:var(--text2)}
+strong{color:var(--text);font-weight:650}
+a{color:var(--volt-ink);font-weight:600;text-decoration:none}
+a:hover{text-decoration:underline}
+ul{margin:0 0 14px;padding-left:22px;color:var(--text2)}
+li{margin-bottom:9px}
+.lead{background:var(--surface2);border:1px solid var(--border);border-radius:var(--r);
+  padding:20px 22px;margin:0 0 26px}
+.lead p{color:var(--text);margin-bottom:0}
+.toc{border:1px solid var(--border);border-radius:var(--r);padding:18px 22px;margin:0 0 34px}
+.toc ol{margin:0;padding-left:20px;color:var(--text2)}
+.toc li{margin-bottom:5px}
+.toc a{font-weight:500}
+.tblwrap{overflow-x:auto;margin:0 0 18px;-webkit-overflow-scrolling:touch}
+table{border-collapse:collapse;width:100%;min-width:560px;font-size:.94rem}
+th,td{text-align:left;padding:11px 13px;border-bottom:1px solid var(--border);
+  vertical-align:top;color:var(--text2)}
+th{font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:.78rem;
+  letter-spacing:.08em;text-transform:uppercase;color:var(--text3);
+  background:var(--surface2);border-bottom:1px solid var(--border)}
+td strong{color:var(--text)}
+.rights{border:1px solid var(--border);border-radius:var(--r);padding:6px 22px;margin:0 0 18px}
+.rights dl{margin:0}
+.rights dt{font-weight:650;color:var(--text);margin:16px 0 3px}
+.rights dd{margin:0 0 12px;color:var(--text2);font-size:.97rem}
+main{padding:40px 0 20px}
+footer{margin-top:56px;border-top:1px solid var(--border);background:var(--bg2);padding:30px 0 50px}
+.flinks{display:flex;gap:20px;flex-wrap:wrap;margin-bottom:16px}
+.flinks a{font-size:.94rem}
+.fine{font-size:.82rem;color:var(--text3)}
+.fine p{color:var(--text3);margin-bottom:6px}
+:focus-visible{outline:3px solid var(--volt);outline-offset:3px;border-radius:6px}
 </style>
 </head>
 <body>
+
+<header>
+  <div class="nav">
+    <a class="brand" href="index.html">GAIN<i>Z</i></a>
+    <a class="back" href="index.html">← Zur Startseite</a>
+  </div>
+</header>
+
+<main>
 <div class="wrap">
-  <header class="masthead">
-    <span class="logo">GAIN<span class="z">Z</span></span>
-    <span class="badge">Datenschutz</span>
-  </header>
 
   <h1>Datenschutzerklärung</h1>
-  <p class="stand">Stand: 24. Juli 2026</p>
+  <p class="stand">Informationen nach Art. 13 und 14 DSGVO · Stand: 24. Juli 2026</p>
 
-  <div class="card lead">
-    <p>GAINZ ist eine Wellness-App für Muskelaufbau und Ernährung. <strong>Deine Daten
-    bleiben grundsätzlich auf deinem Gerät</strong> bzw. in deiner privaten iCloud. Wir als
-    Anbieter erhalten deine Ernährungs-, Trainings- und Gesundheitsdaten <strong>nicht</strong>.
-    Es gibt kein Nutzerkonto, kein Login und <strong>kein Tracking</strong> über Apps oder
-    Websites hinweg.</p>
+  <div class="lead">
+    <p>Kurz gesagt: GAINZ ist so gebaut, dass deine Daten <strong>auf deinem Gerät
+    bleiben</strong>. Es gibt kein Nutzerkonto, kein Tracking und keine Werbung. Deine
+    Ernährungs-, Trainings- und Gesundheitsdaten erhalten wir als Anbieter
+    <strong>nicht</strong>. Diese Website lädt keine externen Schriften, Skripte oder
+    Analysedienste.</p>
   </div>
 
-  <h2>Verantwortlicher</h2>
+  <div class="toc" aria-label="Inhaltsverzeichnis">
+    <ol>
+      <li><a href="#verantwortlicher">Verantwortlicher</a></li>
+      <li><a href="#website">Diese Website</a></li>
+      <li><a href="#kontakt">Kontaktaufnahme</a></li>
+      <li><a href="#app">Die App GAINZ</a></li>
+      <li><a href="#rechtsgrundlagen">Rechtsgrundlagen im Überblick</a></li>
+      <li><a href="#empfaenger">Empfänger und Drittlandübermittlung</a></li>
+      <li><a href="#speicherdauer">Speicherdauer und Löschung</a></li>
+      <li><a href="#rechte">Deine Rechte</a></li>
+      <li><a href="#sonstiges">Automatisierte Entscheidungen, Erforderlichkeit, Änderungen</a></li>
+    </ol>
+  </div>
+
+  <!-- 1 -->
+  <h2 id="verantwortlicher">1. Verantwortlicher</h2>
   <p>
-    Jakob Bennemann<br>
-    Neubrückenstraße 73, 48143 Münster<br>
+    Verantwortlicher im Sinne der DSGVO ist:<br><br>
+    <strong>Jakob Bennemann</strong><br>
+    Neubrückenstraße 73<br>
+    48143 Münster, Deutschland<br>
     E-Mail: <a href="mailto:gainz@jakob-bennemann.de">gainz@jakob-bennemann.de</a>
   </p>
+  <p>
+    Ein Datenschutzbeauftragter ist nicht bestellt, da die gesetzlichen Voraussetzungen
+    (Art. 37 DSGVO, § 38 BDSG) nicht vorliegen. Vollständige Anbieterangaben:
+    <a href="impressum.html">Impressum</a>.
+  </p>
 
-  <h2>Welche Daten verarbeitet die App und wo?</h2>
+  <!-- 2 -->
+  <h2 id="website">2. Diese Website</h2>
 
-  <h3>1. Auf dem Gerät gespeicherte Daten</h3>
-  <p>Alle Einträge, die du erfasst — Mahlzeiten &amp; Kalorien, Gewicht, Körperdaten,
-  Trainingseinheiten, Sätze/Wiederholungen, Pläne, Rezepte, Erinnerungen — werden lokal auf
-  deinem iPhone in einer App-Datenbank (SwiftData) gespeichert. Sie verlassen dein Gerät nur
-  in den unten genannten, klar abgegrenzten Fällen.</p>
+  <h3>2.1 Hosting und Server-Protokolle</h3>
+  <p>
+    Diese Website wird als statische Seite über <strong>GitHub Pages</strong> bereitgestellt.
+    Anbieter ist die GitHub, Inc., 88 Colin P. Kelly Jr. Street, San Francisco, CA 94107,
+    USA (ein Unternehmen der Microsoft Corporation).
+  </p>
+  <p>
+    Beim Aufruf der Seite werden technisch notwendige Daten an die Server des Anbieters
+    übertragen und dort in Protokolldateien verarbeitet, insbesondere:
+  </p>
+  <ul>
+    <li>gekürzte oder vollständige IP-Adresse des anfragenden Geräts</li>
+    <li>Datum und Uhrzeit des Zugriffs</li>
+    <li>Name und URL der abgerufenen Datei sowie übertragene Datenmenge</li>
+    <li>verwendeter Browser und Betriebssystem, ggf. die verweisende Seite (Referrer)</li>
+  </ul>
+  <p>
+    <strong>Zweck:</strong> Ausliefern der Seite, Sicherstellung von Stabilität und
+    Sicherheit sowie Abwehr von Missbrauch.
+    <strong>Rechtsgrundlage:</strong> Art. 6 Abs. 1 lit. f DSGVO — unser berechtigtes
+    Interesse am technisch sicheren und zuverlässigen Betrieb der Website. Eine
+    Zusammenführung dieser Daten mit anderen Datenquellen findet durch uns nicht statt;
+    wir haben auf die Protokolldateien selbst keinen Zugriff.
+  </p>
+  <p>
+    <strong>Drittlandübermittlung:</strong> Dabei können Daten in die USA übertragen werden.
+    GitHub, Inc. ist unter dem <strong>EU-US Data Privacy Framework</strong> zertifiziert,
+    sodass die Übermittlung auf einen Angemessenheitsbeschluss der EU-Kommission nach
+    Art. 45 DSGVO gestützt werden kann; ergänzend gelten die Standardvertragsklauseln nach
+    Art. 46 DSGVO. Näheres in der
+    <a href="https://docs.github.com/site-policy/privacy-policies/github-general-privacy-statement"
+       rel="noopener">Datenschutzerklärung von GitHub</a>.
+  </p>
 
-  <h3>2. Apple Health (HealthKit) — optional</h3>
-  <p>Wenn du es in <strong>Profil&nbsp;→&nbsp;Apple&nbsp;Health</strong> aktivierst, liest
-  GAINZ dein Gewicht aus Apple Health und schreibt neue Wiegungen sowie abgeschlossene
-  Workouts dorthin zurück. Diese Daten werden ausschließlich auf deinem Gerät bzw. in Apples
-  HealthKit verarbeitet, <strong>nicht an uns oder Dritte übertragen</strong> und
-  <strong>nicht für Werbung</strong> verwendet. Du kannst den Zugriff jederzeit in der App
-  oder in den iOS-Einstellungen widerrufen.</p>
+  <h3>2.2 Keine Cookies, kein Tracking, keine externen Inhalte</h3>
+  <p>
+    Diese Website setzt <strong>keine Cookies</strong>, verwendet <strong>keine
+    Analyse- oder Tracking-Dienste</strong> und bindet <strong>keine externen
+    Ressourcen</strong> ein. Schriftarten, Bilder, das Video und die Stilangaben werden
+    ausschließlich von dieser Website selbst geladen — es findet also insbesondere keine
+    Verbindung zu Anbietern wie Google Fonts, CDNs oder Social-Media-Netzwerken statt.
+    Eine Einwilligung nach § 25 TDDDG ist deshalb nicht erforderlich; ein Cookie-Banner
+    entfällt.
+  </p>
+  <p>
+    Das Promo-Video wird von dieser Website ausgeliefert (kein YouTube, kein Vimeo) und
+    erst geladen, wenn du es startest.
+  </p>
 
-  <h3>3. iCloud-Backup (CloudKit) — optional</h3>
-  <p>Sofern du bei iCloud angemeldet bist, sichert GAINZ deine App-Daten in deiner
-  <strong>privaten</strong> iCloud-Datenbank, damit sie zwischen deinen Geräten
-  synchronisiert und gesichert sind. Auf diese Daten haben nur du (über dein Apple-Konto)
-  Zugriff — der Anbieter nicht. Es gelten die Datenschutzbestimmungen von Apple.</p>
+  <!-- 3 -->
+  <h2 id="kontakt">3. Kontaktaufnahme</h2>
+  <p>
+    Wenn du uns per E-Mail schreibst — etwa über die Schaltfläche „Benachrichtige mich“
+    oder die Support-Seite — verarbeiten wir die von dir übermittelten Daten (E-Mail-Adresse,
+    Name sofern angegeben, Inhalt der Nachricht), um deine Anfrage zu beantworten.
+  </p>
+  <p>
+    <strong>Rechtsgrundlage:</strong> Art. 6 Abs. 1 lit. b DSGVO, soweit die Anfrage der
+    Vorbereitung oder Erfüllung eines Vertrags dient, im Übrigen Art. 6 Abs. 1 lit. f DSGVO
+    (berechtigtes Interesse an der Beantwortung von Anfragen). Bittest du um eine
+    Benachrichtigung zum Erscheinen der App, beruht das Speichern deiner Adresse zu diesem
+    Zweck auf Art. 6 Abs. 1 lit. a DSGVO (Einwilligung), die du jederzeit widerrufen kannst.
+  </p>
+  <p>
+    Wir löschen deine Anfrage, sobald sie erledigt ist und keine gesetzlichen
+    Aufbewahrungspflichten entgegenstehen — Benachrichtigungswünsche spätestens nach der
+    einmaligen Benachrichtigung oder auf Widerruf. Der E-Mail-Versand erfolgt über den
+    Postfach-Anbieter der genannten Adresse; die Übertragung im Internet kann
+    unverschlüsselt erfolgen.
+  </p>
 
-  <h3>4. Lebensmitteldaten — Open Food Facts</h3>
-  <p>Wenn du Lebensmittel suchst oder einen Barcode scannst, wird der Suchbegriff bzw. der
-  Barcode an <a href="https://openfoodfacts.org" target="_blank" rel="noopener">Open Food
-  Facts</a> gesendet, um Produkt- und Nährwertdaten abzurufen. Dabei werden
-  <strong>keine personenbezogenen Daten</strong> und keine Kennung von dir übertragen.
-  Datenquelle lizenziert unter ODbL.</p>
+  <!-- 4 -->
+  <h2 id="app">4. Die App GAINZ</h2>
+  <p>
+    Die App benötigt <strong>kein Nutzerkonto</strong> und keine Registrierung. Alle
+    Inhalte, die du erfasst — Mahlzeiten, Kalorien, Gewicht, Körperdaten,
+    Trainingseinheiten, Sätze, Pläne, Rezepte und Erinnerungen — werden
+    <strong>lokal auf deinem iPhone</strong> in einer App-Datenbank gespeichert. Wir als
+    Anbieter erhalten diese Daten nicht und haben keinen Zugriff darauf. Daten verlassen
+    dein Gerät nur in den folgenden, klar abgegrenzten Fällen.
+  </p>
 
-  <h3>5. Übungsdaten — wger</h3>
-  <p>Beim einmaligen Laden der Übungsbibliothek werden Übungsdaten von
-  <a href="https://wger.de" target="_blank" rel="noopener">wger.de</a> abgerufen
-  (CC-BY-SA&nbsp;4.0). Dabei werden <strong>keine</strong> personenbezogenen Daten
-  übertragen.</p>
+  <h3>4.1 Apple Health (HealthKit) — optional</h3>
+  <p>
+    Wenn du es in der App aktivierst, liest GAINZ dein Gewicht aus Apple Health und schreibt
+    neue Wiegungen sowie abgeschlossene Workouts dorthin zurück. Es handelt sich um
+    Gesundheitsdaten im Sinne von Art. 9 DSGVO. Die Verarbeitung findet
+    <strong>ausschließlich auf deinem Gerät</strong> statt; diese Daten werden nicht an uns
+    und nicht an Dritte übertragen und <strong>nicht für Werbung oder Analysen</strong>
+    genutzt.
+  </p>
+  <p>
+    <strong>Rechtsgrundlage:</strong> Art. 6 Abs. 1 lit. a und Art. 9 Abs. 2 lit. a DSGVO —
+    deine ausdrückliche Einwilligung, die du in der App oder in den iOS-Einstellungen
+    jederzeit mit Wirkung für die Zukunft widerrufen kannst.
+  </p>
 
-  <h3>6. KI-Coach &amp; KI-Rezepte (BYOK) — optional, mit ausdrücklicher Zustimmung</h3>
-  <p>GAINZ kann optionale KI-Funktionen nutzen (natürlicher formulierte Coach-Texte,
-  KI-generierte Rezepte). Diese sind <strong>standardmäßig aus</strong>. Du aktivierst sie
-  nur, indem du deinen <strong>eigenen</strong> API-Schlüssel eines KI-Anbieters hinterlegst;
-  der Schlüssel wird ausschließlich verschlüsselt im <strong>iOS-Schlüsselbund deines
-  Geräts</strong> gespeichert und niemals an uns übertragen.</p>
-  <p><strong>Vor der ersten Übertragung fragt die App ausdrücklich um deine Zustimmung.</strong>
-  Erst danach werden <strong>zusammengefasste</strong> Trainings- und Ernährungsdaten (z.&nbsp;B.
-  Anzahl Sätze, Slot-Ziele, gesperrte Zutaten, dein frei getippter Rezeptwunsch) an den von
-  dir gewählten Anbieter gesendet, um die Antwort zu erzeugen. <strong>Gewichts- und
-  Gesundheitswerte werden dabei nicht übertragen.</strong></p>
-  <p>Standard-Anbieter ist <strong>Mistral AI</strong> (Server in der EU) —
-  <a href="https://mistral.ai/terms/#privacy-policy" target="_blank" rel="noopener">Datenschutz</a>.
-  Je nach Build kann alternativ <strong>Anthropic</strong> genutzt werden —
-  <a href="https://www.anthropic.com/legal/privacy" target="_blank" rel="noopener">Datenschutz</a>.
-  Es gelten die Bestimmungen des jeweiligen Anbieters; diese bieten ein vergleichbares
-  Schutzniveau. Du kannst die Funktion jederzeit deaktivieren und den Schlüssel in der App
-  entfernen.</p>
+  <h3>4.2 iCloud-Backup (CloudKit) — optional</h3>
+  <p>
+    Ist dein Gerät bei iCloud angemeldet, kann GAINZ deine App-Daten in deiner
+    <strong>privaten</strong> iCloud-Datenbank sichern, damit sie zwischen deinen Geräten
+    synchron und gesichert sind. Die Verarbeitung erfolgt innerhalb deines Apple-Kontos
+    durch die Apple Inc. bzw. Apple Distribution International Ltd.; nur du hast Zugriff,
+    wir nicht. Es gelten die
+    <a href="https://www.apple.com/legal/privacy/de-ww/" rel="noopener">Apple-Datenschutzrichtlinien</a>.
+    Ohne iCloud arbeitet die App vollständig lokal weiter.
+  </p>
+  <p><strong>Rechtsgrundlage:</strong> Art. 6 Abs. 1 lit. a DSGVO (Einwilligung durch
+  Aktivierung), im Übrigen Art. 6 Abs. 1 lit. b DSGVO zur Bereitstellung der Funktion.</p>
 
-  <h2>Kein Tracking, keine Werbung</h2>
-  <p>GAINZ verwendet <strong>keine</strong> Werbe- oder Analyse-Tracker, kein
-  plattformübergreifendes Tracking und gibt keine Daten an Datenhändler weiter.</p>
+  <h3>4.3 Lebensmitteldaten — Open Food Facts</h3>
+  <p>
+    Bei der Lebensmittelsuche oder einem Barcode-Scan wird der Suchbegriff bzw. der
+    Barcode an <a href="https://openfoodfacts.org" rel="noopener">Open Food Facts</a>
+    übertragen, um Produkt- und Nährwertdaten abzurufen. Dabei werden <strong>keine
+    personenbezogenen Daten und keine Kennung</strong> von dir übermittelt; die App sendet
+    lediglich einen technischen Namen samt Version als User-Agent. Betreiber ist die
+    gemeinnützige Organisation Open Food Facts (Frankreich, EU).
+  </p>
+  <p><strong>Rechtsgrundlage:</strong> Art. 6 Abs. 1 lit. b DSGVO (Bereitstellung der von
+  dir aufgerufenen Suchfunktion).</p>
 
-  <h2>Speicherdauer &amp; Löschung deiner Daten</h2>
-  <p>Deine Daten bleiben gespeichert, bis du sie löschst. Du kannst <strong>jederzeit
-  sämtliche Daten in der App löschen</strong>:
-  <strong>Profil&nbsp;→&nbsp;Rechtliches&nbsp;&amp;&nbsp;Daten&nbsp;→&nbsp;„Alle Daten
-  löschen“</strong>. Das entfernt alle lokalen Daten, das iCloud-Backup in deiner privaten
-  iCloud sowie den gespeicherten KI-Schlüssel. Einzelne Einträge kannst du direkt in den
-  jeweiligen Listen entfernen.</p>
+  <h3>4.4 Kamera und Barcode-Scan</h3>
+  <p>
+    Für den Barcode-Scan greift die App auf die Kamera zu. Die Bildverarbeitung findet
+    vollständig auf dem Gerät statt; es werden keine Bilder gespeichert oder übertragen —
+    nur die erkannte Ziffernfolge wird für die Produktabfrage genutzt.
+  </p>
+  <p><strong>Rechtsgrundlage:</strong> Art. 6 Abs. 1 lit. a DSGVO (Kamera-Berechtigung).</p>
 
-  <h2>Kinder</h2>
-  <p>GAINZ richtet sich nicht an Kinder und ist für Nutzer ab dem im App Store angegebenen
-  Mindestalter bestimmt.</p>
+  <h3>4.5 Übungsbibliothek — wger</h3>
+  <p>
+    Beim einmaligen Laden der Übungsbibliothek werden Übungsdaten von
+    <a href="https://wger.de" rel="noopener">wger.de</a> abgerufen (Anbieter in der EU).
+    Personenbezogene Daten werden dabei nicht übertragen.
+  </p>
+  <p><strong>Rechtsgrundlage:</strong> Art. 6 Abs. 1 lit. b DSGVO.</p>
 
-  <h2>Deine Rechte</h2>
-  <p>Da wir keine personenbezogenen Daten von dir erheben oder speichern, liegen bei uns
-  keine Daten vor, auf die sich Auskunfts-, Berichtigungs- oder Löschansprüche richten
-  könnten. Für in Apple Health oder iCloud gespeicherte Daten gelten die
-  Apple-Datenschutzbestimmungen; für an KI-Anbieter übermittelte Daten die des jeweiligen
-  Anbieters.</p>
+  <h3>4.6 KI-Funktionen — optional, mit ausdrücklicher Einwilligung</h3>
+  <p>
+    GAINZ kann Coach-Texte natürlicher formulieren und zusätzliche Rezepte erzeugen. Diese
+    Funktionen sind <strong>standardmäßig deaktiviert</strong> und setzen voraus, dass du
+    einen <strong>eigenen API-Schlüssel</strong> eines KI-Anbieters hinterlegst. Der
+    Schlüssel wird ausschließlich verschlüsselt im iOS-Schlüsselbund deines Geräts
+    gespeichert und nie an uns übertragen.
+  </p>
+  <p>
+    <strong>Vor der ersten Übertragung fragt die App ausdrücklich um deine Zustimmung.</strong>
+    Erst danach werden <em>zusammengefasste</em> Trainings- und Rezeptdaten übertragen —
+    zum Beispiel Anzahl der Sätze, Slot-Kalorienziele, gesperrte Zutaten und dein frei
+    getippter Rezeptwunsch. <strong>Gewichts- und Gesundheitswerte werden nicht
+    übertragen.</strong>
+  </p>
+  <p>
+    Standard-Anbieter ist <strong>Mistral AI</strong> (Mistral AI SAS, Paris, Frankreich —
+    Verarbeitung in der EU),
+    <a href="https://mistral.ai/terms/#privacy-policy" rel="noopener">Datenschutzhinweise</a>.
+    Je nach App-Variante kann alternativ <strong>Anthropic</strong> (Anthropic PBC, USA)
+    genutzt werden; in diesem Fall findet eine Übermittlung in ein Drittland statt, die auf
+    deiner ausdrücklichen Einwilligung nach Art. 49 Abs. 1 lit. a DSGVO sowie den
+    Standardvertragsklauseln des Anbieters beruht —
+    <a href="https://www.anthropic.com/legal/privacy" rel="noopener">Datenschutzhinweise</a>.
+  </p>
+  <p>
+    <strong>Rechtsgrundlage:</strong> Art. 6 Abs. 1 lit. a DSGVO (Einwilligung). Du kannst
+    die Funktion jederzeit abschalten und den Schlüssel in der App entfernen; damit endet
+    jede weitere Übertragung.
+  </p>
 
-  <h2>Kein medizinischer Dienst</h2>
-  <p>GAINZ ist eine Wellness-/Fitness-App und ersetzt keine ärztliche Beratung, Diagnose oder
-  Behandlung.</p>
+  <h3>4.7 Mitteilungen</h3>
+  <p>
+    Erinnerungen werden als <strong>lokale Mitteilungen</strong> direkt auf dem Gerät
+    geplant. Es gibt keinen Push-Server und keine Übertragung an uns. Du kannst
+    Mitteilungen in der App und in den iOS-Einstellungen jederzeit deaktivieren.
+  </p>
+  <p><strong>Rechtsgrundlage:</strong> Art. 6 Abs. 1 lit. a DSGVO (Einwilligung durch
+  Aktivierung der Mitteilungen).</p>
 
-  <h2>Änderungen</h2>
-  <p>Wir passen diese Erklärung an, wenn sich die App ändert. Die jeweils aktuelle Fassung ist
-  unter dieser URL abrufbar.</p>
+  <h3>4.8 App Store</h3>
+  <p>
+    Der Download der App erfolgt über den Apple App Store. Dabei verarbeitet Apple Daten
+    (z.&nbsp;B. Apple-ID, Downloadzeitpunkt) in eigener Verantwortung. Wir erhalten von
+    Apple lediglich aggregierte, nicht personenbezogene Statistiken. Es gelten die
+    <a href="https://www.apple.com/legal/privacy/de-ww/" rel="noopener">Apple-Datenschutzrichtlinien</a>.
+  </p>
 
-  <h2>Kontakt</h2>
-  <p>Fragen zum Datenschutz:
-  <a href="mailto:gainz@jakob-bennemann.de">gainz@jakob-bennemann.de</a></p>
+  <!-- 5 -->
+  <h2 id="rechtsgrundlagen">5. Rechtsgrundlagen im Überblick</h2>
+  <div class="tblwrap">
+    <table>
+      <thead>
+        <tr><th>Verarbeitung</th><th>Zweck</th><th>Rechtsgrundlage</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><strong>Server-Protokolle der Website</strong></td><td>Ausliefern der Seite, Sicherheit</td><td>Art. 6 Abs. 1 lit. f</td></tr>
+        <tr><td><strong>E-Mail-Anfrage</strong></td><td>Beantwortung</td><td>Art. 6 Abs. 1 lit. b bzw. f</td></tr>
+        <tr><td><strong>Benachrichtigung zum Launch</strong></td><td>einmalige Information</td><td>Art. 6 Abs. 1 lit. a</td></tr>
+        <tr><td><strong>Daten in der App</strong></td><td>Bereitstellung der Funktionen (lokal)</td><td>Art. 6 Abs. 1 lit. b</td></tr>
+        <tr><td><strong>Apple Health</strong></td><td>Gewichtstrend, Workout-Export</td><td>Art. 6 Abs. 1 lit. a, Art. 9 Abs. 2 lit. a</td></tr>
+        <tr><td><strong>iCloud-Backup</strong></td><td>Sicherung und Synchronisation</td><td>Art. 6 Abs. 1 lit. a und b</td></tr>
+        <tr><td><strong>Open Food Facts / wger</strong></td><td>Produkt- und Übungsdaten</td><td>Art. 6 Abs. 1 lit. b</td></tr>
+        <tr><td><strong>KI-Funktionen</strong></td><td>Textformulierung, Rezepte</td><td>Art. 6 Abs. 1 lit. a (ggf. Art. 49 Abs. 1 lit. a)</td></tr>
+        <tr><td><strong>Mitteilungen</strong></td><td>Erinnerungen (lokal)</td><td>Art. 6 Abs. 1 lit. a</td></tr>
+      </tbody>
+    </table>
+  </div>
 
-  <footer>
-    <span>© <span id="y"></span> GAINZ</span>
-    <a href="./support.html">Support</a>
-    <a href="./index.html">Start</a>
-  </footer>
+  <!-- 6 -->
+  <h2 id="empfaenger">6. Empfänger und Drittlandübermittlung</h2>
+  <p>
+    Wir geben deine Daten nicht zum Zweck der Werbung weiter und verkaufen keine Daten. Eine
+    Übermittlung erfolgt nur an die genannten Stellen und nur in dem jeweils beschriebenen
+    Umfang:
+  </p>
+  <div class="tblwrap">
+    <table>
+      <thead>
+        <tr><th>Empfänger</th><th>Rolle</th><th>Sitz / Grundlage</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><strong>GitHub, Inc.</strong></td><td>Hosting dieser Website</td><td>USA — EU-US Data Privacy Framework (Art. 45), ergänzend Standardvertragsklauseln</td></tr>
+        <tr><td><strong>Apple</strong></td><td>App Store, iCloud, HealthKit (im Rahmen deines Apple-Kontos)</td><td>EU/USA — eigene Verantwortlichkeit von Apple</td></tr>
+        <tr><td><strong>Open Food Facts</strong></td><td>Lebensmitteldatenbank</td><td>Frankreich (EU)</td></tr>
+        <tr><td><strong>wger</strong></td><td>Übungsdatenbank</td><td>EU</td></tr>
+        <tr><td><strong>Mistral AI</strong></td><td>KI-Textgenerierung (optional)</td><td>Frankreich (EU)</td></tr>
+        <tr><td><strong>Anthropic PBC</strong></td><td>KI-Textgenerierung (nur alternative Variante)</td><td>USA — Einwilligung (Art. 49 Abs. 1 lit. a) und Standardvertragsklauseln</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p>
+    Bei den KI-Anbietern nutzt du deinen eigenen Zugang; die Verarbeitung erfolgt in deren
+    Verantwortung nach deren Bedingungen.
+  </p>
+
+  <!-- 7 -->
+  <h2 id="speicherdauer">7. Speicherdauer und Löschung</h2>
+  <ul>
+    <li><strong>App-Daten:</strong> bleiben gespeichert, bis du sie löschst. Du kannst
+      <strong>jederzeit alle Daten in der App löschen</strong>:
+      <em>Profil → Rechtliches &amp; Daten → „Alle Daten löschen“</em>. Das entfernt die
+      lokalen Daten, das Backup in deiner privaten iCloud und den gespeicherten
+      KI-Schlüssel. Einzelne Einträge lassen sich direkt in den jeweiligen Listen entfernen.</li>
+    <li><strong>Server-Protokolle der Website:</strong> Löschung durch den Hoster nach
+      dessen Fristen, üblicherweise nach kurzer Zeit; wir haben darauf keinen Zugriff.</li>
+    <li><strong>E-Mail-Anfragen:</strong> Löschung nach Erledigung, sofern keine
+      gesetzlichen Aufbewahrungspflichten (z.&nbsp;B. § 147 AO, § 257 HGB) bestehen.</li>
+    <li><strong>Benachrichtigungswünsche:</strong> Löschung nach der einmaligen
+      Benachrichtigung oder sofort auf Widerruf.</li>
+  </ul>
+
+  <!-- 8 -->
+  <h2 id="rechte">8. Deine Rechte</h2>
+  <p>Du hast uns gegenüber jederzeit folgende Rechte hinsichtlich deiner personenbezogenen Daten:</p>
+  <div class="rights">
+    <dl>
+      <dt>Auskunft (Art. 15 DSGVO)</dt>
+      <dd>Bestätigung, ob und welche Daten wir zu dir verarbeiten, samt näherer Informationen.</dd>
+      <dt>Berichtigung (Art. 16 DSGVO)</dt>
+      <dd>Korrektur unrichtiger oder Vervollständigung unvollständiger Daten.</dd>
+      <dt>Löschung (Art. 17 DSGVO)</dt>
+      <dd>Löschung deiner Daten, soweit keine Aufbewahrungspflichten entgegenstehen.</dd>
+      <dt>Einschränkung der Verarbeitung (Art. 18 DSGVO)</dt>
+      <dd>Einschränkung statt Löschung, etwa während einer Prüfung der Richtigkeit.</dd>
+      <dt>Datenübertragbarkeit (Art. 20 DSGVO)</dt>
+      <dd>Erhalt der von dir bereitgestellten Daten in einem strukturierten, gängigen,
+        maschinenlesbaren Format.</dd>
+      <dt>Widerspruch (Art. 21 DSGVO)</dt>
+      <dd>Widerspruch gegen Verarbeitungen, die auf Art. 6 Abs. 1 lit. f DSGVO beruhen.</dd>
+      <dt>Widerruf der Einwilligung (Art. 7 Abs. 3 DSGVO)</dt>
+      <dd>Jederzeitiger Widerruf einer erteilten Einwilligung mit Wirkung für die Zukunft —
+        etwa für Apple Health, iCloud, Mitteilungen oder die KI-Funktionen, jeweils direkt
+        in der App oder in den iOS-Einstellungen.</dd>
+      <dt>Beschwerde bei einer Aufsichtsbehörde (Art. 77 DSGVO)</dt>
+      <dd>Beschwerde bei einer Datenschutz-Aufsichtsbehörde, insbesondere der für uns
+        zuständigen Stelle (siehe unten).</dd>
+    </dl>
+  </div>
+  <p>
+    Zur Ausübung genügt eine Nachricht an
+    <a href="mailto:gainz@jakob-bennemann.de">gainz@jakob-bennemann.de</a>.
+  </p>
+  <p>
+    <strong>Zuständige Aufsichtsbehörde:</strong><br>
+    Landesbeauftragte für Datenschutz und Informationsfreiheit Nordrhein-Westfalen (LDI NRW)<br>
+    Postfach 20 04 44, 40102 Düsseldorf<br>
+    <a href="https://www.ldi.nrw.de" rel="noopener">www.ldi.nrw.de</a>
+  </p>
+  <p>
+    Hinweis: Da die App-Daten dein Gerät in der Regel nicht verlassen, liegen uns zu dir
+    meist überhaupt keine personenbezogenen Daten vor — Auskunft und Löschung kannst du
+    dann unmittelbar selbst in der App vornehmen (siehe Abschnitt 7).
+  </p>
+
+  <!-- 9 -->
+  <h2 id="sonstiges">9. Automatisierte Entscheidungen, Erforderlichkeit, Änderungen</h2>
+  <h3>Keine automatisierte Entscheidungsfindung</h3>
+  <p>
+    Es findet keine automatisierte Entscheidungsfindung einschließlich Profiling nach
+    Art. 22 DSGVO statt. Die Empfehlungen der App (Kalorienziel, Trainingsvorschläge)
+    werden ausschließlich auf deinem Gerät berechnet, entfalten keine rechtliche Wirkung
+    und lassen sich jederzeit von dir überschreiben.
+  </p>
+  <h3>Erforderlichkeit der Bereitstellung</h3>
+  <p>
+    Du bist nicht verpflichtet, personenbezogene Daten bereitzustellen. Für die Nutzung der
+    App ist keine Registrierung nötig. Alle optionalen Funktionen (Apple Health, iCloud,
+    Mitteilungen, KI) kannst du deaktiviert lassen — die App bleibt vollständig nutzbar.
+  </p>
+  <h3>Änderungen dieser Erklärung</h3>
+  <p>
+    Wir passen diese Datenschutzerklärung an, wenn sich die App, diese Website oder die
+    Rechtslage ändern. Die jeweils aktuelle Fassung ist unter dieser Adresse abrufbar; das
+    Datum oben zeigt den Stand.
+  </p>
+
+  <h3>Kein medizinischer Dienst</h3>
+  <p>
+    GAINZ ist eine Wellness- und Fitness-App und ersetzt keine ärztliche Beratung,
+    Diagnose oder Behandlung.
+  </p>
+
 </div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="flinks">
+      <a href="index.html">Startseite</a>
+      <a href="datenschutz.html">Datenschutzerklärung</a>
+      <a href="impressum.html">Impressum</a>
+      <a href="support.html">Support</a>
+    </div>
+    <div class="fine">
+      <p>Jakob Bennemann, Neubrückenstraße 73, 48143 Münster ·
+      <a href="mailto:gainz@jakob-bennemann.de">gainz@jakob-bennemann.de</a></p>
+      <p>© <span id="y"></span> GAINZ</p>
+    </div>
+  </div>
+</footer>
 <script>document.getElementById('y').textContent=new Date().getFullYear();</script>
 </body>
 </html>
